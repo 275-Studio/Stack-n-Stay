@@ -1,0 +1,43 @@
+# Unity Generated
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+UserSettings/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+.vscode/
+.idea/
+*.bak
+*.old
+*.orig
+.DS_Store
+
+# Unity Asset Store tools
+Assets/AssetStoreTools*
+Library/
+Packages/PackageCache/
+
+# LFS tracked
+*.psd
+*.png
+*.jpg
+*.fbx
+*.mp4
+*.wav
+*.mp3
