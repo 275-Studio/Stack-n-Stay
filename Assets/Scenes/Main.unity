@@ -221,6 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 519420031}
   truck: {fileID: 1845915897}
+  levelManager: {fileID: 1734939724}
 --- !u!4 &408776806
 Transform:
   m_ObjectHideFlags: 0
@@ -803,7 +804,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6e3b8f835816d4abc0f0b20048a991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLevel: {fileID: 11400000, guid: 8331a3b9015d5f2438f794bb6f1b0bc7, type: 2}
+  levels:
+  - {fileID: 11400000, guid: 8331a3b9015d5f2438f794bb6f1b0bc7, type: 2}
+  - {fileID: 11400000, guid: 574c8fa4ec714884883a5e96bf4c36a9, type: 2}
   spawner: {fileID: 2046470748}
   startTruckButton: {fileID: 942920987}
 --- !u!4 &1734939725
@@ -1028,7 +1031,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845915897}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

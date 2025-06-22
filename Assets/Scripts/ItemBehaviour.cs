@@ -12,18 +12,28 @@ public class ItemBehaviour : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.bodyType = RigidbodyType2D.Kinematic;
     }
+
     public void Drop()
     {
         if (hasDropped) return;
 
         rb.bodyType = RigidbodyType2D.Dynamic;
         hasDropped = true;
+
+        // ✅ Daftarkan ke LevelManager saat dijatuhkan
+        LevelManager levelManager = FindObjectOfType<LevelManager>();
+        if (levelManager != null)
+        {
+            levelManager.RegisterSpawnedItem(gameObject);
+        }
     }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Debug.Log("Collided with: " + collision.collider.name + " | Tag: " + collision.collider.tag);
         if (isParented || isGameOverTriggered) return;
-        if (collision.collider.CompareTag("Road")){
+
+        if (collision.collider.CompareTag("Road"))
+        {
             Debug.Log("Game Over");
             isGameOverTriggered = true;
             GameManager.Instance.GameOver();

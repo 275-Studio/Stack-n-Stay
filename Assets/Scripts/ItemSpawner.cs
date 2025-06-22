@@ -14,8 +14,6 @@ public class ItemSpawner : MonoBehaviour
         {
             Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = 0;
-
-            // Ikuti posisi X dan Y mouse
             previewItem.transform.position = mousePos;
 
             if (Input.GetMouseButtonDown(0))
@@ -25,7 +23,7 @@ public class ItemSpawner : MonoBehaviour
         }
     }
 
-    public void SpawnItem(GameObject prefab)
+    public GameObject SpawnItem(GameObject prefab)
     {
         itemPrefab = prefab;
         itemDropped = false;
@@ -35,32 +33,25 @@ public class ItemSpawner : MonoBehaviour
 
         previewItem = Instantiate(itemPrefab, spawnPos, Quaternion.identity);
 
-        // Nonaktifkan physics
         var rb = previewItem.GetComponent<Rigidbody2D>();
         if (rb != null) rb.bodyType = RigidbodyType2D.Kinematic;
 
-        // Nonaktifkan collider untuk preview
         ToggleCollider(previewItem, false);
-
-        // Tambahkan transparansi preview
         SetAlpha(previewItem, 0.5f);
+
+        return previewItem; 
     }
 
     private void DropPreviewItem()
     {
         if (previewItem == null) return;
 
-        // Aktifkan collider
         ToggleCollider(previewItem, true);
 
-        // Aktifkan physics
         var rb = previewItem.GetComponent<Rigidbody2D>();
         if (rb != null) rb.bodyType = RigidbodyType2D.Dynamic;
 
-        // Kembalikan transparansi ke normal
         SetAlpha(previewItem, 1f);
-
-        // Jalankan logic drop
         previewItem.GetComponent<ItemBehaviour>().Drop();
 
         previewItem = null;
@@ -80,7 +71,6 @@ public class ItemSpawner : MonoBehaviour
 
     private void ToggleCollider(GameObject obj, bool state)
     {
-        // Ubah semua collider (termasuk anak-anaknya)
         foreach (var col in obj.GetComponentsInChildren<Collider2D>())
         {
             col.enabled = state;

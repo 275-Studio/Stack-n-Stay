@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 
     public Camera mainCamera;
     public GameObject truck;
+    public LevelManager levelManager;
+    public Vector3 truckPos = new Vector3(6.25f, 0.29f, 0f);
 
     private bool levelFinished = false;
 
@@ -33,12 +35,28 @@ public class GameManager : MonoBehaviour
     IEnumerator LevelComplete()
     {
         yield return new WaitForSeconds(1f);
-        Debug.Log("Level Selesai!");
+        ResetGame();
+        levelFinished = false;
+        // Tunggu sejenak lalu lanjut level
+        yield return new WaitForSeconds(1f);
+        levelManager.LoadNextLevel();
     }
 
     public void GameOver()
     {
         Debug.Log("Game Over");
         Time.timeScale = 0f;
+    }
+
+    private void ResetGame()
+    {
+       truck.transform.position = truckPos;
+        var truckController = truck.GetComponent<TruckController>();
+        if (truckController != null)
+        {
+            truckController.StopTruck(); 
+        }
+        truck.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        levelManager.ClearPreviousItems();
     }
 }

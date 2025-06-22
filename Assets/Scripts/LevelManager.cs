@@ -1,36 +1,81 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    public LevelData currentLevel;
+    public List<LevelData> levels;
     public ItemSpawner spawner;
     public Button startTruckButton;
-    private int currentIndex = 0;
+    private List<GameObject> spawnedItems = new List<GameObject>();
+
+    private int currentLevelIndex = 0;
+    private int currentItemIndex = 0;
+    private LevelData currentLevel;
 
     void Start()
     {
-        startTruckButton.gameObject.SetActive(false); 
-        SpawnNextItem();
+        LoadLevel(0);
     }
 
     void Update()
     {
-        if (spawner.itemDropped && currentIndex < currentLevel.itemList.Count)
+        if (currentLevel == null || spawner == null) return;
+
+        if (spawner.itemDropped)
         {
-            SpawnNextItem();
+            if (currentItemIndex < currentLevel.itemList.Count)
+            {
+                SpawnNextItem();
+                spawner.itemDropped = false;
+            }
+            else if (currentItemIndex >= currentLevel.itemList.Count)
+            {
+                startTruckButton.gameObject.SetActive(true);
+            }
         }
-        else if (spawner.itemDropped && currentIndex >= currentLevel.itemList.Count)
+    }
+
+    public void LoadLevel(int index)
+    {
+        if (index < 0 || index >= levels.Count)
         {
-            startTruckButton.gameObject.SetActive(true);
+            Debug.Log("No more levels!");
+            return;
         }
+        ClearPreviousItems();
+        currentLevelIndex = index;
+        currentLevel = levels[currentLevelIndex];
+        currentItemIndex = 0;
+        Time.timeScale = 1f;
+        spawner.itemDropped = true;
+        startTruckButton.gameObject.SetActive(false);
     }
 
     void SpawnNextItem()
     {
-        spawner.SpawnItem(currentLevel.itemList[currentIndex]);
-        currentIndex++;
+        GameObject prefab = currentLevel.itemList[currentItemIndex];
+        spawner.SpawnItem(prefab); 
+        currentItemIndex++;
+    }
+
+    public void ClearPreviousItems()
+    {
+        foreach (var item in spawnedItems)
+        {
+            if (item != null)
+                Destroy(item);
+        }
+        spawnedItems.Clear();
+    }
+
+    public void LoadNextLevel()
+    {
+        LoadLevel(currentLevelIndex + 1);
+    }
+    public void RegisterSpawnedItem(GameObject item)
+    {
+        if (!spawnedItems.Contains(item))
+            spawnedItems.Add(item);
     }
 }
