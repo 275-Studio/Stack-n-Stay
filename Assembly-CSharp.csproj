@@ -47,10 +47,13 @@
   <ItemGroup>
     <Compile Include="Assets\ScriptableObject\LevelData.cs" />
     <Compile Include="Assets\Scripts\TruckController.cs" />
+    <Compile Include="Assets\Scripts\TMPButtonTextHover.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\MainMenuManager.cs" />
     <Compile Include="Assets\Scripts\ItemBehaviour.cs" />
     <Compile Include="Assets\Scripts\ItemSpawner.cs" />
+    <Compile Include="Assets\Scripts\UIManager.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
