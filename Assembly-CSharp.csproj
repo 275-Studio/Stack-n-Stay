@@ -52,6 +52,7 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\MainMenuManager.cs" />
     <Compile Include="Assets\Scripts\ItemBehaviour.cs" />
+    <Compile Include="Assets\Scripts\UIItemList.cs" />
     <Compile Include="Assets\Scripts\ItemSpawner.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

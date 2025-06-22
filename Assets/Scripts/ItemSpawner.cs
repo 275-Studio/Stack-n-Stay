@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ItemSpawner : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class ItemSpawner : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0f) return;
+
         if (!itemDropped && previewItem != null)
         {
             Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -18,6 +21,11 @@ public class ItemSpawner : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
+                if (EventSystem.current.IsPointerOverGameObject())
+                {
+                    return;
+                }
+
                 DropPreviewItem();
             }
         }
@@ -39,8 +47,12 @@ public class ItemSpawner : MonoBehaviour
         ToggleCollider(previewItem, false);
         SetAlpha(previewItem, 0.5f);
 
+        ItemBehaviour behaviour = previewItem.GetComponent<ItemBehaviour>();
+        if (behaviour != null) behaviour.originPrefab = prefab;
+
         return previewItem; 
     }
+
 
     private void DropPreviewItem()
     {

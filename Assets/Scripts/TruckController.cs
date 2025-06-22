@@ -25,6 +25,7 @@ public class TruckController : MonoBehaviour
     }
     void Update()
     {
+        if (Time.timeScale == 0f) return;
         if (move)
         {
             rb.bodyType = RigidbodyType2D.Dynamic;

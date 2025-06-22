@@ -35,11 +35,11 @@ public class GameManager : MonoBehaviour
     IEnumerator LevelComplete()
     {
         yield return new WaitForSeconds(1f);
+
         ResetGame();
         levelFinished = false;
-        // Tunggu sejenak lalu lanjut level
-        yield return new WaitForSeconds(1f);
-        levelManager.LoadNextLevel();
+
+        UIManager.Instance.ShowWinPanel(); // Tampilkan UI menang di sini
     }
 
     public void GameOver()
@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
 
     private void ResetGame()
     {
-       truck.transform.position = truckPos;
+        truck.transform.position = truckPos;
         var truckController = truck.GetComponent<TruckController>();
         if (truckController != null)
         {

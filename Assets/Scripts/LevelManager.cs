@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     private int currentLevelIndex = 0;
     private int currentItemIndex = 0;
     private LevelData currentLevel;
+    public UIItemList uiItemList;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0f) return;
         if (currentLevel == null || spawner == null) return;
 
         if (spawner.itemDropped)
@@ -32,6 +34,8 @@ public class LevelManager : MonoBehaviour
             else if (currentItemIndex >= currentLevel.itemList.Count)
             {
                 startTruckButton.gameObject.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
     }
@@ -43,6 +47,7 @@ public class LevelManager : MonoBehaviour
             Debug.Log("No more levels!");
             return;
         }
+
         ClearPreviousItems();
         currentLevelIndex = index;
         currentLevel = levels[currentLevelIndex];
@@ -50,6 +55,11 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 1f;
         spawner.itemDropped = true;
         startTruckButton.gameObject.SetActive(false);
+
+        if (uiItemList != null)
+        {
+            uiItemList.ShowItemIcons(currentLevel.itemList);
+        }
     }
 
     void SpawnNextItem()
@@ -73,6 +83,7 @@ public class LevelManager : MonoBehaviour
     {
         LoadLevel(currentLevelIndex + 1);
     }
+
     public void RegisterSpawnedItem(GameObject item)
     {
         if (!spawnedItems.Contains(item))

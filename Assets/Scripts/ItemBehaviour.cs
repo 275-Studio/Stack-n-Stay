@@ -6,6 +6,7 @@ public class ItemBehaviour : MonoBehaviour
     private bool hasDropped = false;
     private bool isParented = false;
     private bool isGameOverTriggered = false;
+    public GameObject originPrefab;
 
     void Awake()
     {
@@ -20,13 +21,18 @@ public class ItemBehaviour : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Dynamic;
         hasDropped = true;
 
-        // ✅ Daftarkan ke LevelManager saat dijatuhkan
+        if (GameManager.Instance != null && originPrefab != null)
+        {
+            GameManager.Instance.levelManager.uiItemList.RemoveIcon(originPrefab);
+        }
+
         LevelManager levelManager = FindObjectOfType<LevelManager>();
         if (levelManager != null)
         {
             levelManager.RegisterSpawnedItem(gameObject);
         }
     }
+
 
     void OnCollisionEnter2D(Collision2D collision)
     {
