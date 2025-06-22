@@ -8,7 +8,6 @@ public class LevelManager : MonoBehaviour
     public LevelData currentLevel;
     public ItemSpawner spawner;
     public Button startTruckButton;
-
     private int currentIndex = 0;
 
     void Start()

@@ -12,7 +12,6 @@ public class TruckController : MonoBehaviour
     {
         move = true;
     }
-
     void Update()
     {
         if (move)

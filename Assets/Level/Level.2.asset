@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae86a19494034f7438d1376c9a0b6a0d, type: 3}
-  m_Name: Level.1
+  m_Name: Level.2
   m_EditorClassIdentifier: 
-  levelName: Level.1
+  levelName: Level.2
   itemList:
+  - {fileID: 5229233685216073577, guid: 28aa172665c7de24bb0e84f4c89a71ca, type: 3}
+  - {fileID: 5229233685216073577, guid: 28aa172665c7de24bb0e84f4c89a71ca, type: 3}
   - {fileID: 3097396618874964153, guid: d2f9684fb5573a846961e8eca9a73181, type: 3}
-  - {fileID: 5766201798309160504, guid: 2fbacacb5b41c1f44b454f296ba0e99d, type: 3}
-  - {fileID: 5204605160775767908, guid: 5425e361bfd8d31428cb863c828dd03d, type: 3}
