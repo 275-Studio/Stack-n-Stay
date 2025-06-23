@@ -15,15 +15,15 @@ public class UIManager : MonoBehaviour
         else
             Destroy(gameObject);
     }
+
     void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
 
-        winPanel.SetActive(false);
-        pausePanel.SetActive(false);
+        if (winPanel != null) winPanel.SetActive(false);
+        if (pausePanel != null) pausePanel.SetActive(false);
     }
-
 
     void Update()
     {
@@ -32,38 +32,41 @@ public class UIManager : MonoBehaviour
             if (isPaused) ResumeGame();
             else PauseGame();
         }
+
+        if (Input.GetKeyDown(KeyCode.R)) // tekan R untuk reset saat testing
+        {
+            ResetProgress();
+        }
     }
 
     public void ShowWinPanel()
     {
         Time.timeScale = 0f;
-        winPanel.SetActive(true);
+        if (winPanel != null) winPanel.SetActive(true);
     }
 
     public void ContinueGame()
     {
         Time.timeScale = 1f;
-        winPanel.SetActive(false);
+        if (winPanel != null) winPanel.SetActive(false);
 
         int index = PlayerPrefs.GetInt("SelectedLevelIndex", 0);
-
-        // Simpan progres
         LevelProgress.SaveCompleted(index);
         LevelProgress.UnlockNext(index);
 
         SceneManager.LoadScene("SelectLevel");
     }
 
-    public void GoToMainMenu()
+    public void GoToSelectLevel()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("SelectLevel");
     }
 
     public void PauseGame()
     {
         Time.timeScale = 0f;
-        pausePanel.SetActive(true);
+        if (pausePanel != null) pausePanel.SetActive(true);
         isPaused = true;
 
         Cursor.lockState = CursorLockMode.None; 
@@ -73,7 +76,7 @@ public class UIManager : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1f;
-        pausePanel.SetActive(false);
+        if (pausePanel != null) pausePanel.SetActive(false);
         isPaused = false;
 
         Cursor.lockState = CursorLockMode.Confined; 
@@ -83,5 +86,12 @@ public class UIManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void ResetProgress()
+    {
+        PlayerPrefs.DeleteAll();
+        Debug.Log("Progress direset.");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

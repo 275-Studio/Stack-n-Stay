@@ -21,10 +21,12 @@ public class LevelSelectManager : MonoBehaviour
     }
     void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         LevelProgress.Load(levels);
         LoadLevelButtons();
     }
-    void LoadLevelButtons()
+    public void LoadLevelButtons()
     {
         for (int i = 0; i < levels.Count; i++)
         {
@@ -37,7 +39,7 @@ public class LevelSelectManager : MonoBehaviour
                 if (i < 5)
                 {
                     obj.transform.SetParent(easyContainerTop, false);
-                    obj.transform.SetSiblingIndex(0); // insert paling kiri → jadi urut kanan ke kiri
+                    obj.transform.SetSiblingIndex(0); 
                 }
                 else
                 {
@@ -76,6 +78,7 @@ public class LevelSelectManager : MonoBehaviour
     public void PlayLevel(int index)
     {
         PlayerPrefs.SetInt("SelectedLevelIndex", index);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene");
+        Debug.Log("Playing level " + index+1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
     }
 }

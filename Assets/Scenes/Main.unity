@@ -3005,7 +3005,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Go To Menu
+  m_text: Select Level
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2b33c40334ded78498972e77001c6262, type: 2}
   m_sharedMaterial: {fileID: 4381867916586425494, guid: 2b33c40334ded78498972e77001c6262, type: 2}
@@ -4251,7 +4251,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1278578292}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: GoToMainMenu
+        m_MethodName: GoToSelectLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -35,11 +35,14 @@ public class GameManager : MonoBehaviour
     IEnumerator LevelComplete()
     {
         yield return new WaitForSeconds(1f);
-
+        int index = PlayerPrefs.GetInt("SelectedLevelIndex", 0);
+        LevelProgress.SaveCompleted(index);
+        LevelProgress.UnlockNext(index);
+        PlayerPrefs.Save(); 
+        LevelSelectManager.Instance.LoadLevelButtons(); 
         ResetGame();
         levelFinished = false;
-
-        UIManager.Instance.ShowWinPanel(); // Tampilkan UI menang di sini
+        UIManager.Instance.ShowWinPanel();
     }
 
     public void GameOver()

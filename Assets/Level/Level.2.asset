@@ -17,3 +17,5 @@ MonoBehaviour:
   - {fileID: 5229233685216073577, guid: 28aa172665c7de24bb0e84f4c89a71ca, type: 3}
   - {fileID: 5229233685216073577, guid: 28aa172665c7de24bb0e84f4c89a71ca, type: 3}
   - {fileID: 3097396618874964153, guid: d2f9684fb5573a846961e8eca9a73181, type: 3}
+  isCompleted: 1
+  isUnlocked: 1

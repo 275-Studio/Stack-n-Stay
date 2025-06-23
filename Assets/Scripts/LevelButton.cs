@@ -17,7 +17,9 @@ public class LevelButton : MonoBehaviour
         levelIndex = index;
         levelText.text = (index + 1).ToString();
 
-        bool isUnlocked = levelData.isUnlocked;
+        var status = LevelProgress.statusList[index];
+        bool isUnlocked = status.isUnlocked;
+
         button.interactable = isUnlocked;
         lockIcon.SetActive(!isUnlocked);
 

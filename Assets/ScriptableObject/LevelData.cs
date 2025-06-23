@@ -6,6 +6,5 @@ public class LevelData : ScriptableObject
 {
     public string levelName;
     public List<GameObject> itemList;
-    [HideInInspector] public bool isCompleted = false;
-    [HideInInspector] public bool isUnlocked = false;
+    
 }
