@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
+    public static LevelManager Instance; // Tambahkan ini
+
     public List<LevelData> levels;
     public ItemSpawner spawner;
     public Button startTruckButton;
@@ -14,9 +16,16 @@ public class LevelManager : MonoBehaviour
     private LevelData currentLevel;
     public UIItemList uiItemList;
 
+    void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
+
     void Start()
     {
-        LoadLevel(0);
+        int index = PlayerPrefs.GetInt("SelectedLevelIndex", 0);
+        LoadLevel(index);
     }
 
     void Update()

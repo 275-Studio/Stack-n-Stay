@@ -45,7 +45,13 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
         winPanel.SetActive(false);
 
-        GameManager.Instance.levelManager.LoadNextLevel();
+        int index = PlayerPrefs.GetInt("SelectedLevelIndex", 0);
+
+        // Simpan progres
+        LevelProgress.SaveCompleted(index);
+        LevelProgress.UnlockNext(index);
+
+        SceneManager.LoadScene("SelectLevel");
     }
 
     public void GoToMainMenu()
