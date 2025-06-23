@@ -40,9 +40,8 @@ public class ItemBehaviour : MonoBehaviour
 
         if (collision.collider.CompareTag("Road"))
         {
-            Debug.Log("Game Over");
-            isGameOverTriggered = true;
             GameManager.Instance.GameOver();
+            isGameOverTriggered = true;
         }
     }
 }

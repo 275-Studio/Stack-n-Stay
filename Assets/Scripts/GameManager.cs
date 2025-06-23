@@ -21,10 +21,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (levelFinished || truck == null || mainCamera == null) return;
-
         Vector3 truckViewport = mainCamera.WorldToViewportPoint(truck.transform.position);
-
-        // Cek jika truk sudah sepenuhnya keluar dari kanan layar
         if (truckViewport.x > 1.1f)
         {
             levelFinished = true;
@@ -39,16 +36,18 @@ public class GameManager : MonoBehaviour
         LevelProgress.SaveCompleted(index);
         LevelProgress.UnlockNext(index);
         PlayerPrefs.Save(); 
-        LevelSelectManager.Instance.LoadLevelButtons(); 
         ResetGame();
         levelFinished = false;
         UIManager.Instance.ShowWinPanel();
     }
 
+
     public void GameOver()
     {
-        Debug.Log("Game Over");
         Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        UIManager.Instance.ShowLosePanel();
     }
 
     private void ResetGame()

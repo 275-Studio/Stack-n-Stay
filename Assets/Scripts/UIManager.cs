@@ -4,7 +4,8 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public GameObject winPanel;
-    public GameObject pausePanel; 
+    public GameObject pausePanel;
+    public GameObject losePanel;
     public static UIManager Instance;
     public bool isPaused = false;
     
@@ -45,15 +46,19 @@ public class UIManager : MonoBehaviour
         if (winPanel != null) winPanel.SetActive(true);
     }
 
+    public void ShowLosePanel()
+    {
+        Time.timeScale = 0f;
+        if (losePanel != null) losePanel.SetActive(true);
+    }
+
     public void ContinueGame()
     {
         Time.timeScale = 1f;
         if (winPanel != null) winPanel.SetActive(false);
-
         int index = PlayerPrefs.GetInt("SelectedLevelIndex", 0);
         LevelProgress.SaveCompleted(index);
         LevelProgress.UnlockNext(index);
-
         SceneManager.LoadScene("SelectLevel");
     }
 
@@ -68,7 +73,6 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0f;
         if (pausePanel != null) pausePanel.SetActive(true);
         isPaused = true;
-
         Cursor.lockState = CursorLockMode.None; 
         Cursor.visible = true;                  
     }
@@ -93,5 +97,11 @@ public class UIManager : MonoBehaviour
         PlayerPrefs.DeleteAll();
         Debug.Log("Progress direset.");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void RetryLevel()
+    {
+        Time.timeScale = 1f;
+        int index = PlayerPrefs.GetInt("SelectedLevelIndex", 0);
+        SceneManager.LoadScene("Main");
     }
 }
