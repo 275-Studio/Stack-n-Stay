@@ -8,7 +8,13 @@ public class ItemSpawner : MonoBehaviour
     public bool itemDropped = true;
 
     private GameObject previewItem;
-
+    [Header("Sound Settings")]
+    public AudioClip dropSound;
+    private AudioSource audioSource;
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     void Update()
     {
         if (Time.timeScale == 0f) return;
@@ -23,6 +29,10 @@ public class ItemSpawner : MonoBehaviour
                 if (EventSystem.current.IsPointerOverGameObject())
                 {
                     return;
+                }
+                if (dropSound != null && audioSource != null)
+                {
+                    audioSource.PlayOneShot(dropSound);
                 }
                 DropPreviewItem();
             }

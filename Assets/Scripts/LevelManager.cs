@@ -17,8 +17,8 @@ public class LevelManager : MonoBehaviour
     public LevelData CurrentLevel => currentLevel;
     public UIItemList uiItemList;
     public Transform obstacleParent;
-    public Vector2 obstacleStartPos = new Vector2(-2.37f, -3.76f);
-    public float obstacleSpacing = 8f;
+    public Vector2 obstacleStartPos = new Vector2(-3f, -3.76f);
+    public float obstacleSpacing = 7f;
 
     void Awake()
     {

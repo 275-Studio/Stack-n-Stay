@@ -8,4 +8,5 @@ public class LevelData : ScriptableObject
     public GameObject vehiclePrefab;
     public List<GameObject> itemList;
     public List<GameObject> ObstacleList;
+    public Vector3 vehicleSpawnOffset = Vector3.zero;
 }

@@ -8,13 +8,19 @@ public class GameManager : MonoBehaviour
     public Camera mainCamera;
     public GameObject vehicle;
     public LevelManager levelManager;
-    public Vector3 vehiclePos = new Vector3(-3.4f, -0.5f, 0f);
     private bool levelFinished = false;
     public Button startVehicleButton;
+    public AudioClip winSFX;
+    public AudioClip loseSFX;
+    private AudioSource audioSource;
     void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+    }
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -38,9 +44,13 @@ public class GameManager : MonoBehaviour
         ResetGame();
         levelFinished = false;
         UIManager.Instance.ShowWinPanel();
+        if (winSFX != null && audioSource != null)
+            audioSource.PlayOneShot(winSFX);
     }
     public void GameOver()
     {
+        if (loseSFX != null && audioSource != null)
+            audioSource.PlayOneShot(loseSFX);
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -50,10 +60,12 @@ public class GameManager : MonoBehaviour
     {
         if (vehicle != null)
             Destroy(vehicle);
+
         GameObject vehiclePrefab = levelManager.GetVehiclePrefab();
         if (vehiclePrefab != null)
         {
-            vehicle = Instantiate(vehiclePrefab, vehiclePos, Quaternion.identity);
+            Vector3 spawnPos = levelManager.CurrentLevel.vehicleSpawnOffset;
+            vehicle = Instantiate(vehiclePrefab, spawnPos, Quaternion.identity);
         }
         else
         {
@@ -62,6 +74,7 @@ public class GameManager : MonoBehaviour
 
         levelManager.ClearPreviousItems();
     }
+
     public void SpawnVehicleFromLevelData()
     {
         GameObject vehiclePrefab = LevelManager.Instance.GetVehiclePrefab();
@@ -72,18 +85,19 @@ public class GameManager : MonoBehaviour
         }
 
         if (vehicle != null)
-        {
-            Destroy(vehicle); 
-        }
-        vehicle = Instantiate(vehiclePrefab);
-        vehicle.transform.SetPositionAndRotation(vehiclePos, Quaternion.identity);
+            Destroy(vehicle);
+
+        Vector3 spawnPos = LevelManager.Instance.CurrentLevel.vehicleSpawnOffset;
+
+        vehicle = Instantiate(vehiclePrefab, spawnPos, Quaternion.identity);
+
         VehicleController controller = vehicle.GetComponent<VehicleController>();
         if (controller != null && startVehicleButton != null)
         {
             startVehicleButton.onClick.RemoveAllListeners();
-
             startVehicleButton.onClick.AddListener(controller.StartVehicle);
         }
     }
+
 
 }

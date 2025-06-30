@@ -15,11 +15,9 @@ MonoBehaviour:
   levelName: Level.1
   vehiclePrefab: {fileID: 1678728965952148499, guid: 0344ed12251101a41a6ca8c73fd71620, type: 3}
   itemList:
-  - {fileID: 5766201798309160504, guid: 2fbacacb5b41c1f44b454f296ba0e99d, type: 3}
+  - {fileID: 3097396618874964153, guid: de89f4b3f2a6f974c98afcd09dd2d347, type: 3}
+  - {fileID: 3097396618874964153, guid: de89f4b3f2a6f974c98afcd09dd2d347, type: 3}
   - {fileID: 3097396618874964153, guid: d2f9684fb5573a846961e8eca9a73181, type: 3}
-  - {fileID: 5875004185456244925, guid: e2f9f8622103e6143845633863eb24fb, type: 3}
-  - {fileID: 5875004185456244925, guid: e2f9f8622103e6143845633863eb24fb, type: 3}
-  - {fileID: 5204605160775767908, guid: 5425e361bfd8d31428cb863c828dd03d, type: 3}
-  ObstacleList:
-  - {fileID: 270103184031618374, guid: 53670a2c1e25f8e44ae0afe8361e7b8e, type: 3}
-  - {fileID: 270103184031618374, guid: 53670a2c1e25f8e44ae0afe8361e7b8e, type: 3}
+  - {fileID: 3097396618874964153, guid: d2f9684fb5573a846961e8eca9a73181, type: 3}
+  ObstacleList: []
+  vehicleSpawnOffset: {x: -3.4, y: -0.47, z: 0}

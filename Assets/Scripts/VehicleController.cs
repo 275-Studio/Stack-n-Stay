@@ -7,34 +7,50 @@ public class VehicleController : MonoBehaviour
 {
     public float speed = 6f;
     private bool move = false;
-    public Rigidbody2D rb;
+    private bool hasPlayedSFX = false;
 
-    private void Start()
-    {
-        transform.position = new Vector3(-3.4f, -0.5f, 0f);
-    }
+    public Rigidbody2D rb;
+    public AudioClip vehicleSFX;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         if (rb == null) rb = GetComponent<Rigidbody2D>();
         rb.bodyType = RigidbodyType2D.Kinematic;
     }
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
     public void StartVehicle()
     {
         move = true;
+        hasPlayedSFX = false; 
     }
 
     public void StopVehicle()
     {
         move = false;
+        hasPlayedSFX = false; 
     }
+
     void Update()
     {
         if (Time.timeScale == 0f) return;
+
         if (move)
         {
+            if (!hasPlayedSFX && vehicleSFX != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(vehicleSFX);
+                hasPlayedSFX = true;
+            }
+
             rb.bodyType = RigidbodyType2D.Dynamic;
             rb.velocity = new Vector2(speed, rb.velocity.y);
         }
     }
 }
+
