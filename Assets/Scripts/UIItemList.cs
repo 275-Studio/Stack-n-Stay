@@ -8,17 +8,14 @@ public class UIItemList : MonoBehaviour
     public Transform contentParent; 
     private List<GameObject> spawnedIcons = new List<GameObject>();
 
-    // Tampilkan semua icon item di panel
     public void ShowItemIcons(List<GameObject> items)
     {
         ClearIcons();
-
         foreach (var item in items)
         {
             GameObject icon = Instantiate(iconPrefab, contentParent);
             Image img = icon.GetComponent<Image>();
 
-            // Ambil sprite dari prefab itemnya
             SpriteRenderer sr = item.GetComponent<SpriteRenderer>();
             if (sr != null && img != null)
             {

@@ -12,7 +12,6 @@ public class ItemSpawner : MonoBehaviour
     void Update()
     {
         if (Time.timeScale == 0f) return;
-
         if (!itemDropped && previewItem != null)
         {
             Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -25,7 +24,6 @@ public class ItemSpawner : MonoBehaviour
                 {
                     return;
                 }
-
                 DropPreviewItem();
             }
         }
@@ -35,21 +33,15 @@ public class ItemSpawner : MonoBehaviour
     {
         itemPrefab = prefab;
         itemDropped = false;
-
         Vector3 spawnPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         spawnPos.z = 0;
-
         previewItem = Instantiate(itemPrefab, spawnPos, Quaternion.identity);
-
         var rb = previewItem.GetComponent<Rigidbody2D>();
         if (rb != null) rb.bodyType = RigidbodyType2D.Kinematic;
-
         ToggleCollider(previewItem, false);
         SetAlpha(previewItem, 0.5f);
-
         ItemBehaviour behaviour = previewItem.GetComponent<ItemBehaviour>();
         if (behaviour != null) behaviour.originPrefab = prefab;
-
         return previewItem; 
     }
 

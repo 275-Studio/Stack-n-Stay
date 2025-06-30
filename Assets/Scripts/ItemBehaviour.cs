@@ -38,7 +38,7 @@ public class ItemBehaviour : MonoBehaviour
     {
         if (isParented || isGameOverTriggered) return;
 
-        if (collision.collider.CompareTag("Road"))
+        if (collision.collider.CompareTag("Road") || collision.collider.CompareTag("Obstacle"))
         {
             GameManager.Instance.GameOver();
             isGameOverTriggered = true;

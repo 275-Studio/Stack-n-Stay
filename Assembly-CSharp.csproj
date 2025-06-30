@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ScriptableObject\LevelData.cs" />
-    <Compile Include="Assets\Scripts\TruckController.cs" />
+    <Compile Include="Assets\Scripts\VehicleController.cs" />
     <Compile Include="Assets\Scripts\TMPButtonTextHover.cs" />
     <Compile Include="Assets\Scripts\LevelButton.cs" />
     <Compile Include="Assets\Scripts\LevelStatus.cs" />
@@ -57,6 +57,7 @@
     <Compile Include="Assets\Scripts\LevelSelectManager.cs" />
     <Compile Include="Assets\Scripts\ItemBehaviour.cs" />
     <Compile Include="Assets\Scripts\UIItemList.cs" />
+    <Compile Include="Assets\Scripts\BGMManager.cs" />
     <Compile Include="Assets\Scripts\ItemSpawner.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\BackButton.cs" />

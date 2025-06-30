@@ -3,23 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TruckController : MonoBehaviour
+public class VehicleController : MonoBehaviour
 {
-    public float speed = 2f;
+    public float speed = 6f;
     private bool move = false;
     public Rigidbody2D rb;
 
-    private void Awake()
+    private void Start()
     {
-        rb.bodyType = RigidbodyType2D.Kinematic;
+        transform.position = new Vector3(-3.4f, -0.5f, 0f);
     }
 
-    public void StartTruck()
+    private void Awake()
+    {
+        if (rb == null) rb = GetComponent<Rigidbody2D>();
+        rb.bodyType = RigidbodyType2D.Kinematic;
+    }
+    public void StartVehicle()
     {
         move = true;
     }
 
-    public void StopTruck()
+    public void StopVehicle()
     {
         move = false;
     }

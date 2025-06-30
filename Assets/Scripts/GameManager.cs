@@ -1,17 +1,16 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
     public Camera mainCamera;
-    public GameObject truck;
+    public GameObject vehicle;
     public LevelManager levelManager;
-    public Vector3 truckPos = new Vector3(6.25f, 0.29f, 0f);
-
+    public Vector3 vehiclePos = new Vector3(-3.4f, -0.5f, 0f);
     private bool levelFinished = false;
-
+    public Button startVehicleButton;
     void Awake()
     {
         if (Instance == null) Instance = this;
@@ -20,9 +19,9 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (levelFinished || truck == null || mainCamera == null) return;
-        Vector3 truckViewport = mainCamera.WorldToViewportPoint(truck.transform.position);
-        if (truckViewport.x > 1.1f)
+        if (levelFinished || vehicle == null || mainCamera == null) return;
+        Vector3 vehicleViewport = mainCamera.WorldToViewportPoint(vehicle.transform.position);
+        if (vehicleViewport.x > 1.1f)
         {
             levelFinished = true;
             StartCoroutine(LevelComplete());
@@ -40,8 +39,6 @@ public class GameManager : MonoBehaviour
         levelFinished = false;
         UIManager.Instance.ShowWinPanel();
     }
-
-
     public void GameOver()
     {
         Time.timeScale = 0f;
@@ -49,16 +46,44 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
         UIManager.Instance.ShowLosePanel();
     }
-
     private void ResetGame()
     {
-        truck.transform.position = truckPos;
-        var truckController = truck.GetComponent<TruckController>();
-        if (truckController != null)
+        if (vehicle != null)
+            Destroy(vehicle);
+        GameObject vehiclePrefab = levelManager.GetVehiclePrefab();
+        if (vehiclePrefab != null)
         {
-            truckController.StopTruck(); 
+            vehicle = Instantiate(vehiclePrefab, vehiclePos, Quaternion.identity);
         }
-        truck.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        else
+        {
+            Debug.LogWarning("Vehicle prefab tidak tersedia di LevelData!");
+        }
+
         levelManager.ClearPreviousItems();
     }
+    public void SpawnVehicleFromLevelData()
+    {
+        GameObject vehiclePrefab = LevelManager.Instance.GetVehiclePrefab();
+        if (vehiclePrefab == null)
+        {
+            Debug.LogWarning("Vehicle prefab is null!");
+            return;
+        }
+
+        if (vehicle != null)
+        {
+            Destroy(vehicle); 
+        }
+        vehicle = Instantiate(vehiclePrefab);
+        vehicle.transform.SetPositionAndRotation(vehiclePos, Quaternion.identity);
+        VehicleController controller = vehicle.GetComponent<VehicleController>();
+        if (controller != null && startVehicleButton != null)
+        {
+            startVehicleButton.onClick.RemoveAllListeners();
+
+            startVehicleButton.onClick.AddListener(controller.StartVehicle);
+        }
+    }
+
 }

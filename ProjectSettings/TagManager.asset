@@ -6,7 +6,8 @@ TagManager:
   tags:
   - Item
   - Road
-  - Truck
+  - Obstacle
+  - Vehicle
   layers:
   - Default
   - TransparentFX

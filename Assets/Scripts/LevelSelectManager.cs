@@ -5,7 +5,6 @@ using UnityEngine;
 public class LevelSelectManager : MonoBehaviour
 {
     public static LevelSelectManager Instance;
-
     public GameObject levelButtonPrefab;
     public List<LevelData> levels;
     [SerializeField] Transform easyContainerTop;
@@ -78,7 +77,7 @@ public class LevelSelectManager : MonoBehaviour
     public void PlayLevel(int index)
     {
         PlayerPrefs.SetInt("SelectedLevelIndex", index);
-        Debug.Log("Playing level " + index+1);
+        // Debug.Log("Playing level " + index);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
     }
 }

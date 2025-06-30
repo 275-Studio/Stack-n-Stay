@@ -8,9 +8,7 @@ public class LevelButton : MonoBehaviour
     public TextMeshProUGUI levelText;
     public Image lockIcon; 
     public Image backgroundImage;
-
     private int levelIndex;
-
     [SerializeField] private Color unlockedColor;
     [SerializeField] private Color lockedColor;
 

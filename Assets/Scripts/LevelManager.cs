@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager Instance; // Tambahkan ini
+    public static LevelManager Instance; 
 
     public List<LevelData> levels;
     public ItemSpawner spawner;
@@ -14,7 +14,11 @@ public class LevelManager : MonoBehaviour
     private int currentLevelIndex = 0;
     private int currentItemIndex = 0;
     private LevelData currentLevel;
+    public LevelData CurrentLevel => currentLevel;
     public UIItemList uiItemList;
+    public Transform obstacleParent;
+    public Vector2 obstacleStartPos = new Vector2(-2.37f, -3.76f);
+    public float obstacleSpacing = 8f;
 
     void Awake()
     {
@@ -26,6 +30,7 @@ public class LevelManager : MonoBehaviour
     {
         int index = PlayerPrefs.GetInt("SelectedLevelIndex", 0);
         LoadLevel(index);
+        Debug.Log(index);
     }
 
     void Update()
@@ -69,6 +74,8 @@ public class LevelManager : MonoBehaviour
         {
             uiItemList.ShowItemIcons(currentLevel.itemList);
         }
+        GameManager.Instance?.SpawnVehicleFromLevelData();
+        SpawnObstacles();
     }
 
     void SpawnNextItem()
@@ -98,4 +105,30 @@ public class LevelManager : MonoBehaviour
         if (!spawnedItems.Contains(item))
             spawnedItems.Add(item);
     }
+    public GameObject GetVehiclePrefab()
+    {
+        return currentLevel != null ? currentLevel.vehiclePrefab : null;
+    }
+    public void SpawnObstacles()
+    {
+        if (currentLevel == null || currentLevel.ObstacleList == null) return;
+
+        Vector2 spawnPos = obstacleStartPos;
+
+        for (int i = 0; i < currentLevel.ObstacleList.Count; i++)
+        {
+            GameObject obstaclePrefab = currentLevel.ObstacleList[i];
+            if (obstaclePrefab == null) continue;
+
+            GameObject obstacle = Instantiate(obstaclePrefab, spawnPos, Quaternion.identity);
+
+            if (obstacleParent != null)
+                obstacle.transform.parent = obstacleParent;
+
+            RegisterSpawnedItem(obstacle); 
+
+            spawnPos.x += obstacleSpacing; 
+        }
+    }
+
 }
