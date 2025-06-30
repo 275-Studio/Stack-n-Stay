@@ -6,90 +6,45 @@
   <component name="ChangeListManager">
     <list default="true" id="7b005cee-108b-4b5b-b715-ea9069f2aa09" name="Changes" comment="Initial Commit">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RI-Project-2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RI-Project-2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 1.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 1.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 10.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 10.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 10.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 10.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 11.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 11.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 11.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 11.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 12.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 12.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 12.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 12.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 13.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 13.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 13.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 13.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 14.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 14.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 14.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 14.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 15.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 15.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 15.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 15.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 16.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 16.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 16.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 16.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 17.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 17.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 17.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 17.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 18.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 18.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 18.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 18.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 19.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 19.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 19.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 19.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 2.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 2.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 20.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 20.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 20.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 20.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 21.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 21.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 21.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 21.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 22.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 22.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 22.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 22.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 23.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 23.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 23.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 23.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 24.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 24.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 24.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 24.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 25.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 25.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 25.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 25.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 26.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 26.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 26.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 26.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 27.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 27.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 27.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 27.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 28.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 28.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 28.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 28.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 29.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 29.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 29.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 29.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 3.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 3.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 30.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 30.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 30.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 30.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 4.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 4.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 4.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 5.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 5.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 5.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 5.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 6.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 6.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 6.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 6.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 7.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 7.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 7.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 7.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 8.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 8.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 8.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 8.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 9.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 9.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Level/Level. 9.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/Level. 9.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items_0.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items_0.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items_1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items_1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items_2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items_2.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items_3.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items_3.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items_4.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Items_4.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/car.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/car.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/motor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/motor.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/pickup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/pickup.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObject/LevelData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObject/LevelData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ItemSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ItemSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/VehicleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/VehicleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/car.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/car.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SelectLevel.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SelectLevel.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BGMManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BGMManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker12.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker12.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker13.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker13.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -206,7 +161,8 @@
       <workItem from="1750774784404" duration="1098000" />
       <workItem from="1750830481136" duration="611000" />
       <workItem from="1751201001265" duration="3719000" />
-      <workItem from="1751204921061" duration="11122000" />
+      <workItem from="1751204921061" duration="14135000" />
+      <workItem from="1751297418658" duration="564000" />
     </task>
     <servers />
   </component>

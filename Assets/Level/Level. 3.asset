@@ -21,4 +21,4 @@ MonoBehaviour:
   - {fileID: 5875004185456244925, guid: e2f9f8622103e6143845633863eb24fb, type: 3}
   - {fileID: 3097396618874964153, guid: d2f9684fb5573a846961e8eca9a73181, type: 3}
   ObstacleList: []
-  vehicleSpawnOffset: {x: -3.4, y: -0.47, z: 0}
+  vehicleSpawnOffset: {x: -3.4, y: 0.32, z: 0}
