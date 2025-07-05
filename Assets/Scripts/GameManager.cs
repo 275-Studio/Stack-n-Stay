@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
             levelFinished = true;
             StartCoroutine(LevelComplete());
         }
-    }
+    } 
 
     IEnumerator LevelComplete()
     {

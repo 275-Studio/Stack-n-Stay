@@ -30,7 +30,6 @@ public class LevelManager : MonoBehaviour
     {
         int index = PlayerPrefs.GetInt("SelectedLevelIndex", 0);
         LoadLevel(index);
-        Debug.Log(index);
     }
 
     void Update()
