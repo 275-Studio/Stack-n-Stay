@@ -1,11 +1,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI; 
 
 public class UIManager : MonoBehaviour
 {
     public GameObject winPanel;
     public GameObject pausePanel;
     public GameObject losePanel;
+    public Image winImage;
+    public Image loseImage;
+    public GameObject endingPanel;
+    public Sprite[] image;
     public static UIManager Instance;
     public bool isPaused = false;
     
@@ -19,7 +24,6 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
 
         if (winPanel != null) winPanel.SetActive(false);
@@ -38,13 +42,31 @@ public class UIManager : MonoBehaviour
     public void ShowWinPanel()
     {
         Time.timeScale = 0f;
+        int index = PlayerPrefs.GetInt("SelectedLevelIndex", 0);
+        int spriteIndex = GetImageIndex(index, true);
+
+        if (winImage != null && spriteIndex >= 0 && spriteIndex < image.Length)
+            winImage.sprite = image[spriteIndex];
+
         if (winPanel != null) winPanel.SetActive(true);
     }
 
     public void ShowLosePanel()
     {
         Time.timeScale = 0f;
+        int index = PlayerPrefs.GetInt("SelectedLevelIndex", 0);
+        int spriteIndex = GetImageIndex(index, false);
+
+        if (loseImage != null && spriteIndex >= 0 && spriteIndex < image.Length)
+            loseImage.sprite = image[spriteIndex];
+
         if (losePanel != null) losePanel.SetActive(true);
+    }
+
+    public void ShowEndingPanel()
+    {
+        Time.timeScale = 0f;
+        if (endingPanel != null) endingPanel.SetActive(true);
     }
 
     public void ContinueGame()
@@ -54,7 +76,10 @@ public class UIManager : MonoBehaviour
         int index = PlayerPrefs.GetInt("SelectedLevelIndex", 0);
         LevelProgress.SaveCompleted(index);
         LevelProgress.UnlockNext(index);
-        SceneManager.LoadScene("SelectLevel");
+        int nextIndex = index + 1;
+        PlayerPrefs.SetInt("SelectedLevelIndex", nextIndex);
+
+        LevelManager.Instance.LoadLevel(nextIndex); 
     }
 
     public void GoToSelectLevel()
@@ -79,7 +104,6 @@ public class UIManager : MonoBehaviour
         isPaused = false;
 
         Cursor.lockState = CursorLockMode.Confined; 
-        Cursor.visible = true;                     
     }
 
     public void QuitGame()
@@ -93,4 +117,21 @@ public class UIManager : MonoBehaviour
         int index = PlayerPrefs.GetInt("SelectedLevelIndex", 0);
         SceneManager.LoadScene("Main");
     }
+    private int GetImageIndex(int levelIndex, bool isWin)
+    {
+        if (levelIndex >= 0 && levelIndex <= 9)
+            return isWin ? 0 : 1;
+        else if (levelIndex >= 10 && levelIndex <= 19)
+            return isWin ? 2 : 3;
+        else if (levelIndex >= 20 && levelIndex <= 29)
+            return isWin ? 4 : 5;
+        else
+            return -1;
+    }
+    public void GoToMainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Menu");
+    }
+
 }

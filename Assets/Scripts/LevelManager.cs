@@ -57,10 +57,9 @@ public class LevelManager : MonoBehaviour
     {
         if (index < 0 || index >= levels.Count)
         {
-            Debug.Log("No more levels!");
+            UIManager.Instance.ShowEndingPanel();
             return;
         }
-
         ClearPreviousItems();
         currentLevelIndex = index;
         currentLevel = levels[currentLevelIndex];

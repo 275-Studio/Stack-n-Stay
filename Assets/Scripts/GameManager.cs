@@ -32,11 +32,6 @@ public class GameManager : MonoBehaviour
             levelFinished = true;
             StartCoroutine(LevelComplete());
         }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            ResetGame();
-        }
     } 
 
     IEnumerator LevelComplete()
