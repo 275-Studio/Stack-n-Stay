@@ -24,7 +24,7 @@ public class ItemSpawner : MonoBehaviour
             mousePos.z = 0;
             previewItem.transform.position = mousePos;
 
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 if (EventSystem.current.IsPointerOverGameObject())
                 {

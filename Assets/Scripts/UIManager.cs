@@ -33,11 +33,6 @@ public class UIManager : MonoBehaviour
             if (isPaused) ResumeGame();
             else PauseGame();
         }
-
-        if (Input.GetKeyDown(KeyCode.R)) // tekan R untuk reset saat testing
-        {
-            ResetProgress();
-        }
     }
 
     public void ShowWinPanel()
@@ -91,13 +86,7 @@ public class UIManager : MonoBehaviour
     {
         Application.Quit();
     }
-
-    public void ResetProgress()
-    {
-        PlayerPrefs.DeleteAll();
-        Debug.Log("Progress direset.");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+    
     public void RetryLevel()
     {
         Time.timeScale = 1f;
