@@ -11,6 +11,7 @@ public class ItemSpawner : MonoBehaviour
     [Header("Sound Settings")]
     public AudioClip dropSound;
     private AudioSource audioSource;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -18,6 +19,7 @@ public class ItemSpawner : MonoBehaviour
     void Update()
     {
         if (Time.timeScale == 0f) return;
+
         if (!itemDropped && previewItem != null)
         {
             Vector3 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -26,19 +28,18 @@ public class ItemSpawner : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                if (EventSystem.current.IsPointerOverGameObject())
-                {
-                    return;
-                }
+                if (EventSystem.current.IsPointerOverGameObject()) return;
+
                 if (dropSound != null && audioSource != null)
                 {
                     audioSource.PlayOneShot(dropSound);
                 }
-                DropPreviewItem();
+
+                DropPreviewItem(mousePos);
             }
         }
-    }
 
+    }
     public GameObject SpawnItem(GameObject prefab)
     {
         itemPrefab = prefab;
@@ -48,17 +49,26 @@ public class ItemSpawner : MonoBehaviour
         previewItem = Instantiate(itemPrefab, spawnPos, Quaternion.identity);
         var rb = previewItem.GetComponent<Rigidbody2D>();
         if (rb != null) rb.bodyType = RigidbodyType2D.Kinematic;
+
         ToggleCollider(previewItem, false);
         SetAlpha(previewItem, 0.5f);
+
         ItemBehaviour behaviour = previewItem.GetComponent<ItemBehaviour>();
         if (behaviour != null) behaviour.originPrefab = prefab;
-        return previewItem; 
+        return previewItem;
     }
 
 
-    private void DropPreviewItem()
+    private void DropPreviewItem(Vector3 clickPosition)
     {
         if (previewItem == null) return;
+
+        Vector3 dropPos = clickPosition;
+        if (dropPos.y <= -2f)
+        {
+            dropPos.y = 3f;
+        }
+        previewItem.transform.position = dropPos;
 
         ToggleCollider(previewItem, true);
 
@@ -71,6 +81,8 @@ public class ItemSpawner : MonoBehaviour
         previewItem = null;
         itemDropped = true;
     }
+
+
 
     private void SetAlpha(GameObject obj, float alpha)
     {
